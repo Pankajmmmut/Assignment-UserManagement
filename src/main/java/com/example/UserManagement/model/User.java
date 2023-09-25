@@ -21,11 +21,11 @@ public class User {
     private Integer userId;
     @NotEmpty
     private String userName;
-    @DateTimeFormat
+    @Pattern(regexp = "^\\d{4}-\\d{2}-\\d{2}$", message = "Date of birth should be in the format yyyy-MM-dd")
     private LocalDate dob;
     @Email
     private String email;
-    @Size(max=12,min=12, message="criteria not met")
+    @Pattern(regexp = "^\\d{2}\\d{10}$", message = "Phone number should be 12 digits with a 2-digit country code")
     private String phoneNo;
     @DateTimeFormat
     private LocalDate date;
